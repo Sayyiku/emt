@@ -1,0 +1,523 @@
+<!doctype html>
+    <head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<title>MirlKoi图库</title>
+	<meta name="description" conterlKoi="图片数据库">
+	<meta name="keywords" content="Pixiv.net,Pixiv,二次元插画,ACG,动漫图包">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<link rel="shortcut icon" href="https://iw233.cn/css/ico/logo.ico" type="image/x-icon"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/page.css"/>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="css/icons.min.css" rel="stylesheet" type="text/css"/>
+
+
+    </head>
+	<!--classic-menu-->
+	<script language="JavaScript">
+	    //禁止页面选择以及鼠标右键
+	    document.οncοntextmenu=function(){return false;}; 
+	    document.onselectstart=function(){return false;};
+	    let h = window.innerHeight;
+	    let w = window.innerWidth;
+	
+	    //禁用右键
+	    document.oncontextmenu = function () { return false; };
+	
+	    //在本网页的任何键盘敲击事件都是无效操作 （防止F12和shift+ctrl+i调起开发者工具）  
+	    window.onkeydown = window.onkeyup = window.onkeypress = function () {
+	        window.event.returnValue = false;
+	        return false;
+	    }
+	
+	    //禁用开发者工具F12
+	    document.onkeydown = function () {
+	        if (window.event && window.event.keyCode == 123) {
+	            event.keyCode = 0;
+	            event.returnValue = false;
+	            return false;
+	        }
+	    };
+	
+	    //如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变则关闭本页面  
+	    window.onresize = function () {
+	        if (h != window.innerHeight || w != window.innerWidth) {
+	            window.close();
+	            window.location = "about:blank";
+	        }
+	    }
+	    </script>
+    <body>
+<!-- 主页 -->
+	<!-- 加载 -->
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader">
+                <div class="animation-preloader">
+                    <div class="spinner"></div>
+                    <div class="txt-loading">
+                        <span data-text-preloader="M" class="letters-loading">
+                            M
+                        </span>
+                        <span data-text-preloader="i" class="letters-loading">
+                            i
+                        </span>
+                        <span data-text-preloader="r" class="letters-loading">
+                            r
+                        </span>
+                        <span data-text-preloader="l" class="letters-loading">
+                            l
+                        </span>
+                        <span data-text-preloader="K" class="letters-loading">
+                            K
+                        </span>
+                        <span data-text-preloader="o" class="letters-loading">
+                            o
+                        </span>
+                        <span data-text-preloader="i" class="letters-loading">
+                            i
+                        </span>
+                    </div>
+                </div>
+                <div class="loader">
+                    <div class="row">
+                        <div class="col-3 loader-section section-left">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-left">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-right">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-right">
+                            <div class="bg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main>
+	<!-- 加载 -->
+		<!-- 侧栏 -->
+		<div class="page" id="app">
+			<div class="nav-left" v-show="navLeftFlag" ref="navLeft">
+				<div class="LogoName">
+					<div class="LogoName" style="line-height : 50px; ">
+					<!--<a href="/">MirlKoi</a>-->
+					</div>
+				</div>
+				<div class="navDiv">
+<!-- 
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="50" src="//music.163.com/outchain/player?type=3&id=2069922371&amp;auto=1&amp;height=32"></iframe>
+ -->
+					<div class="navName">	</div>
+					<div class="navName" style="font-size:13px;padding:1px 10px !important;">想保存请点图片加载原图</div>
+					<div class="navName" style="font-size:13px;padding:1px 10px !important;">保证质量,均为手动更新</div>
+
+
+					<div class="nav-list">
+						<ul>
+
+
+						<!-- 壁纸区 -->
+
+							<li class="nav-tab nav-ul">
+								<a href="https://iw233.cn/Tag/islandwind" class="li-a active" target="iframe"><i class='fas fa-rss' style="margin-right:15px;" ></i>最近更新
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+
+							<li class="nav-tab nav-ul">
+								<a href="https://iw233.cn/Tag/Top" class="li-a active" target="iframe"><i class='fas fa-carrot' style="margin-right:15px;" ></i>精选壁纸
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+
+							<li class="nav-tab nav-ul a_active nav-show">
+								<a href="https://iw233.cn/Tag/Random" class="li-a active" target="iframe"><i class='fas fa-burn' style="margin-right:18px;" ></i>随机壁纸
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+
+							<li class="nav-tab nav-ul">
+								<a href="javascript:void[0]" class="li-a" ><i class='fas fa-percentage' style="margin-right:10px;" ></i>当前更新分区
+									<span class="badge badge-pill badge-primary float-right">3</span>
+								<div class="nav-box">
+									<a href="https://iw233.cn/Tag/Yin" class="li-a-a" target="iframe">银发</a>
+									<a href="https://iw233.cn/Tag/Cat" class="li-a-a" target="iframe">兽耳</a>
+<!-- 									<a href="/Tag/JK" class="li-a-a" target="iframe">少女</a> -->
+									<a href="https://iw233.cn/Tag/xing" class="li-a-a" target="iframe">星空</a>
+									<a style="padding: 10px 50px !important;" class="navName">老懒鬼了,更新极慢</a>
+								</div>
+							</li> 
+
+						<!-- 壁纸区 -->
+
+
+							<div class="navName">其他功能</div>
+
+
+						<!-- FPS -->
+<!-- 
+							<li class="nav-tab nav-ul">
+								<a href="https://fps.iw233.cn" class="li-a active" target="iframe"><i class='fas fa-gamepad' style="margin-right:10px;" ></i>PC原神FPS解锁
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+ -->
+						<!-- FPS -->
+
+
+						<!-- 音乐搜索 -->
+<!--
+ 							<li class="nav-tab nav-ul">
+								<a href="https://music.iw233.cn" class="li-a active" target="iframe"><i class='fas fa-music' style="margin-right:10px;" ></i>音乐搜索(下载)
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li> 
+-->
+						<!-- 音乐搜索 -->
+
+						<!-- 哔哩哔哩链接 -->
+
+							<li class="nav-tab nav-ul">
+								<a href="https://space.bilibili.com/7600422" target="_blank" class="li-a active"><i class='fas fa-glass-cheers' style="margin-right:10px;" ></i>哔哩哔哩
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+
+						<!-- 哔哩哔哩链接 -->
+
+
+						<!-- QQ查找 -->
+<!--
+ 							<li class="nav-tab nav-ul">
+								<a href="https://qiafan.vip" class="li-a active" target="iframe"><i class='fas fa-hammer' style="margin-right:10px;" ></i>QQ查询
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li> 
+-->
+						<!-- QQ查找 -->
+
+
+						<!-- 阿里云资源下载 -->
+<!-- 
+							<li class="nav-tab nav-ul">
+								<a href="javascript:void[0]" class="li-a" ><i class='fas fa-cloud-download-alt' style="margin-right:10px;" ></i>资源下载
+									<span class="badge badge-pill badge-primary float-right">2</span>
+								<div class="nav-box">
+									<a href="https://alixiaozhan.net" class="li-a-a" target="iframe">阿里云盘共享站</a>
+									<a href="https://wwe.lanzoui.com/b01npsg8h" class="li-a-a" target="iframe">推荐使用客户端</a>
+								</div>
+							</li> 
+ -->
+						<!-- 阿里云资源下载 -->
+
+
+						<!-- 工具 -->
+
+							<li class="nav-tab nav-ul">
+								<a href="javascript:void[0]" class="li-a" ><i class='fas fa-hammer' style="margin-right:10px;" ></i>其他工具
+									<span class="badge badge-pill badge-primary float-right">3</span>
+								<div class="nav-box">
+									<a href="https://fps.iw233.cn" class="li-a-a" target="iframe">PC原神FPS解锁</a>
+									<a href="https://music.iw233.cn" class="li-a-a" target="iframe">音乐搜索(下载)</a>
+									<a href="https://qiafan.vip" class="li-a-a" target="iframe">QQ查询</a>
+								</div>
+							</li> 
+
+						<!-- 工具 -->
+
+
+						<!-- APP -->
+
+							<li class="nav-tab nav-ul">
+								<a href="javascript:void[0]" class="li-a" ><i class='fab fa-android' style="margin-right:10px;" ></i>安卓软件下载
+									<span class="badge badge-pill badge-primary float-right">5</span>
+								<div class="nav-box">
+									<a href="/Mobile/APP/MirlKoi" class="li-a-a" target="iframe">MirlKoi图库</a>
+									<a href="/Mobile/APP/Pixiv" class="li-a-a" target="iframe">Pixiv官方版</a>
+									<a href="/Mobile/APP/Twitter" class="li-a-a" target="iframe">Twitter(推特)</a>
+									<a href="https://jq.qq.com/?_wv=1027&k=0lP0YjLu" class="li-a-a" target="iframe">哔咔(加群获取)</a>
+									<a href="/Mobile/APP/bilibili" class="li-a-a" target="iframe" style="padding: 5px 45px !important">哔哩哔哩(无广告,会员购)</a>
+								</div>
+							</li> 
+
+						<!-- APP -->
+
+
+							<div class="navName">搜图可能需要代理</div>
+
+
+						<!-- 搜图工具 -->
+
+							<li class="nav-tab nav-ul">
+								<a href="https://iw233.cn/Saucenao" target="_blank" class="li-a active"><i class='fas fa-file-image' style="margin-right:10px;" ></i>Saucenao搜图
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+
+							<li class="nav-tab nav-ul">
+								<a href="https://iw233.cn/Ascii2d"  target="_blank" class="li-a active"><i class='fas fa-image' style="margin-right:10px;" ></i>Ascii2D搜图
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+
+						<!-- 搜图工具 -->
+
+
+						<!-- 联系方式 -->
+<!--
+							<li class="nav-tab nav-ul">
+								<a href="tencent://message/?uin=783906137&Site=im.qq.com&Menu=yes" class="li-a active" target="iframe"><i class='fas fa-hammer' style="margin-right:10px;" ></i>联系QQ
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+-->
+						<!-- 联系方式 -->
+
+
+						<!-- QQ群 -->
+
+							<div class="navName">QQ群</div>
+
+
+							<li class="nav-tab nav-ul">
+								<a href="https://jq.qq.com/?_wv=1027&k=0lP0YjLu"  target="iframe" class="li-a active"><i class='fas fa-comment-dots' style="margin-right:10px;" ></i>加入QQ群
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+
+<!-- 
+							<li class="nav-tab nav-ul">
+								<a href="javascript:void[0]" class="li-a" ><i class='fas fa-comment-dots' style="margin-right:10px;" ></i>加入QQ群
+									<span class="badge badge-pill badge-primary float-right">1</span>
+								<div class="nav-box">
+									<a href="https://jq.qq.com/?_wv=1027&k=0lP0YjLu" class="li-a-a" target="iframe">壁纸1群(人多)</a>
+								</div>
+							</li> 
+ -->
+
+						<!-- QQ群 -->
+
+
+						<!-- API地址 -->
+
+							</li><div class="navName" style="padding: 0px 0px !important;">⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢—————————————————</div>
+
+							<div class="navName">本站图库API</div>
+
+<!-- 							</li><div class="navName" style="padding: 0px 10px !important;">更新日期：12.20</div> -->
+
+
+							<li class="nav-tab nav-ul">
+							<a href="https:\/\/tvax3.sinaimg.cn\/large\/ec43126fgy1gxv5aivgq9j21ok2u8hdw.jpg" class="li-a active" target="_blank">
+								<i class='fas fa-cannabis' style="margin-right:10px;" ></i>随机壁纸
+							</a>
+
+							<li class="nav-tab nav-ul">
+								<a href="https://iw233.cn/API/MirlKoi.php?type=json" class="li-a active" target="_blank">
+									<i class='fab fa-canadian-maple-leaf' style="margin-right:10px;" ></i>精选壁纸
+								</a>
+
+							<li class="nav-tab nav-ul">
+								<a href="https:\/\/tva2.sinaimg.cn\/large\/ec43126fgy1glow283ol0j20xc0idas5.jpg" class="li-a active" target="_blank">
+									<i class='fas fa-code' style="margin-right:10px;" ></i>电脑壁纸
+								</a>
+
+
+							<li class="nav-tab nav-ul">
+								<a href="https:\/\/tva2.sinaimg.cn\/large\/ec43126fgy1gt54ob4cm5j215o1uq7wi.jpg" class="li-a active" target="_blank">
+									<i class='fas fa-code' style="margin-right:10px;" ></i>手机壁纸
+								</a>
+
+							<li class="nav-tab nav-ul">
+								<a href="https://iw233.cn/API/MirlKoi-iw233.php?type=json" class="li-a active" target="_blank">
+									<i class='fab fa-confluence' style="margin-right:10px;" ></i>最近更新(无色图)
+								</a>
+
+							<li class="nav-tab nav-ul">
+								<a href="http://mobile.fgimaxl2.vipnps.vip/API/GHS/2502769170.php?type=json
+" class="li-a active" target="_blank">
+									<i class='fab fa-diaspora' style="margin-right:10px;" ></i>色图API加群获取
+								</a>
+
+<!-- 							</li><div class="navName" style="padding: 0px 20px !important;">更新日期12.20</div> -->
+
+
+
+							</li><div class="navName" style="padding: 10px 45px !important;">GET删除链接?type=json</div>
+
+<!-- 
+							<li class="nav-tab nav-ul">
+								<a href="javascript:void[0]" class="li-a" ><i class='fas fa-code' style="margin-right:10px;" ></i>图库API
+									<span class="badge badge-pill badge-primary float-right">3</span>
+								<div class="nav-box">
+
+									<a style="padding: 5px 50px !important;" class="navName">自己复制链接调用</a>
+
+									<a href="/API/Random.php?type=json" class="li-a-a" target="iframe">随机壁纸</a>
+									<a href="/API/Ghs.php?type=json" class="li-a-a" target="iframe">随机色图</a>
+									<a href="/API/MirlKoi.php?type=json" class="li-a-a" target="iframe">精选壁纸</a>
+
+									<a style="padding: 5px 50px !important;" class="navName">API：Json</a>
+									<a style="padding: 5px 50px !important;" class="navName">GET删除?type=json</a>
+								</div>
+							</li> 
+ -->
+
+						<!-- API地址 -->
+
+
+						<!-- 机器人指令 -->
+<!-- 
+							<li class="nav-tab nav-ul">
+								<a href="/Mobile/MirlKoi" class="li-a active" target="iframe"><i class='fas fa-home' style="margin-right:10px;" ></i>机器人使用教程
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+ -->
+						<!-- 机器人指令 -->
+
+
+						<!-- 测试页面 -->
+<!-- 
+							<li class="nav-tab nav-ul">
+								<a href="https://dev.iw233.cn" class="li-a active" target="iframe"><i class='fas fa-bug' style="margin-right:10px;" ></i>PC测试页面
+									<i class='bx bx-chevron-right' style="float: right;"></i></a>
+								</a>
+							</li>
+ -->
+						<!-- 测试页面  -->
+
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		<!-- 侧栏 -->
+			<div class="nav-right" ref="navRight">
+				<div class="nav-top">
+					<button type="button" class="btn btn-primary btn-sm hiddenBtn" style="line-height: 10px;" @click="isShowLeft">
+						<i class="fas fa-expand-alt" style="font-size: 16px; margin-right:0px; "></i>
+					</button>
+					<!-- <button type="button" class="btn btn-primary btn-sm showBtn" style="line-height: 10px; display: none;" onclick="showNavRight">
+						<i class="bx bx-expand" style="font-size: 16px;"></i>
+					</button> -->
+				</div>
+				<div class="content-page" ref="cPage">	
+					<iframe id="iframe" name="iframe" width="100%" height="100%" frameborder="0" src="https://iw233.cn/Tag/Random/"></iframe><!-- 主页打开默认地址 -->
+				</div>
+			</div>
+		</div>
+<!-- 主页 -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				let navflag = true;
+				$('.nav-tab').click(function() {
+
+					/*	console.log(this);	*/
+					$(this).siblings().each(function() {
+						$(this).removeClass('a_active');
+						// $(this).removeClass('a_active');
+						$(this).find('.nav-box').css('height', '0')
+						//关闭右侧箭头
+						if ($(this).attr('class').indexOf('nav-ul') != -1) {
+							$(this).find('.bx-chevron-right').css('transform', 'rotateZ(0deg)')
+							$(this).find('.bx-chevron-right').css('transition', 'all .5s')
+							$(this).removeClass('nav-show')
+							// $(this).find('div').removeClass('nav-box')
+						}
+					})
+					//当前选中
+					$(this).addClass('a_active')
+					$(this).find('.li-a').addClass('active')
+					// 打开右侧箭头
+					$(this).find('.bx-chevron-right').css('transform', 'rotateZ(90deg)')
+					$(this).find('.bx-chevron-right').css('transition', 'all .5s')
+
+					if($(this).hasClass('nav-show')){
+						$(this).removeClass('a_active');
+						// $(this).removeClass('a_active');
+						$(this).find('.nav-box').css('height', '0')
+						//关闭右侧箭头
+						if ($(this).attr('class').indexOf('nav-ul') != -1) {
+							$(this).find('.bx-chevron-right').css('transform', 'rotateZ(0deg)')
+							$(this).find('.bx-chevron-right').css('transition', 'all .5s')
+							$(this).removeClass('nav-show')
+							// $(this).find('div').removeClass('nav-box')
+						}
+					}else{
+					 	$(this).addClass('nav-show')
+					}
+					//$(this).addClass('nav-show')
+					// $(this).find('div').addClass('nav-box')
+				})
+				/* 二级菜单a点击事件 */
+				$(".li-a-a").click(function() {
+
+					/*	console.log(this);	*/
+					$(".li-a-a").each(function() {
+						$(this).removeClass('active-li-a');
+					})
+					$(this).addClass('active-li-a');
+
+					$("#iframe",parent.document.body).attr("src",$(this).attr('href'))
+					return false;
+				})
+
+			})
+			const vue = new Vue({
+				el: '#app',
+				data: {
+					navLeftFlag: true
+				},
+				methods: {
+					isShowLeft() {
+						if (this.navLeftFlag ) {
+							this.$refs.navRight.style.paddingLeft = '0px'
+							this.$refs.cPage.style.left = '0px';
+							this.navLeftFlag = false;
+							// this.$refs.navLeft.style.width = '0px';
+							// setTimeout(()=>{
+							// 	this.navLeftFlag = false;
+							// },200)
+						} else {
+							this.$refs.navRight.style.paddingLeft = '240px';
+							this.$refs.cPage.style.left = '240px';
+							this.navLeftFlag = true;
+							// this.$refs.navLeft.style.width = '240px';
+							// setTimeout(()=>{
+							// 	this.navLeftFlag = true;
+							// },200)
+						}
+					}
+				}
+			})
+		</script>
+<!-- 		<script language=JavaScript>alert("QQ群号653822572")</script> -->
+<!-- 		<script type="text/javascript">if(confirm("QQ群号")){location.href="https://jq.qq.com/?_wv=1027&k=0lP0YjLu";}else{window.close();}</script> -->
+        </footer>
+     
+		<script src="js/isotope.pkgd.min.js"></script>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.odometer.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/jquery.appear.js"></script>
+		<script src="js/slick.min.js"></script>
+		
+		<script src="js/ajax-form.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script src="js/aos.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+        </body>
+</html>
+

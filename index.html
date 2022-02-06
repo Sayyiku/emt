@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh_CN"> 
+<head> 
+<title>Sayyiku</title> 
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
+<link rel="shortcut icon" href="https://iw233.cn/css/ico/logo.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="css/main2.css"> 
+<noscript>
+    <link rel="stylesheet" href="https://iw233.oss-cn-beijing.aliyuncs.com/css/noscript.css">
+</noscript> 
+<style>
+.vvv {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    }
+</style>
+
+</head> 
+<!--classic-menu-->
+<script language="JavaScript">
+    //禁止页面选择以及鼠标右键
+    document.οncοntextmenu=function(){return false;}; 
+    document.onselectstart=function(){return false;};
+    let h = window.innerHeight;
+    let w = window.innerWidth;
+
+    //禁用右键
+    document.oncontextmenu = function () { return false; };
+
+    //在本网页的任何键盘敲击事件都是无效操作 （防止F12和shift+ctrl+i调起开发者工具）  
+    window.onkeydown = window.onkeyup = window.onkeypress = function () {
+        window.event.returnValue = false;
+        return false;
+    }
+
+    //禁用开发者工具F12
+    document.onkeydown = function () {
+        if (window.event && window.event.keyCode == 123) {
+            event.keyCode = 0;
+            event.returnValue = false;
+            return false;
+        }
+    };
+
+    //如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变则关闭本页面  
+    window.onresize = function () {
+        if (h != window.innerHeight || w != window.innerWidth) {
+            window.close();
+            window.location = "about:blank";
+        }
+    }
+    </script>
+<body class="is-preload">
+<!-- Wrapper --> 
+<div id="wrapper">
+<!-- Header --> 
+    <header id="header"> 
+        <div class="logo"> 
+            <img src="img/1.webp" class="logo"> 
+        </div> 
+        <div class="content"> 
+            <div class="inner"> 
+                <h1>Sayyiku</h1> 
+                <p>一花一世界，一叶一追寻，一曲一场叹，一生为一人。</p> 
+            </div> 
+        </div> 
+        <nav> 
+            <ul> 
+                <!-- <li><a href="https://iw233.cn/main.html"></i>进入主页</a></li> 
+                <li><a href="https://iw233.cn/Tag/islandwind/index.php"></i>最近更新</a></li> 
+                <li><a href="https://iw233.cn/Tag/top/index.php"></i>精选壁纸</a></li> 
+                <li><a href="https://iw233.cn/Tag/Random/index.php" target="_blank">随机壁纸</a></li> -->
+				
+				<li><a href="main.html"></i>进入主页</a></li>
+				<li><a href="main.html"></i>最近更新</a></li> 
+				<li><a href="main.html"></i>精选壁纸</a></li> 
+				<li><a href="main.html" target="_blank">随机壁纸</a></li> 
+            </ul> 
+        </nav>
+    </header>
+    <!-- Footer --> 
+    <footer id="footer"> 
+        <p class="copyright">© 2021-2022: <a href="">Sayyiku</a></p>
+        <a class="copyright" href="https://icp.gov.moe/?keyword=20216022" target="_blank">萌ICP备20216022号</a>
+    </footer> 
+</div>
+<!-- BG --> 
+<div id="bg" data-dsn="video" data-overlay="6">
+<video class="vvv" autoplay loop muted>
+<source src="video/video.mp4" type="video/mp4">
+</video>
+</div>
+<!-- Scripts --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/browser.min.js"></script> 
+<script src="js/breakpoints.min.js"></script> 
+<script src="js/util.js"></script> 
+<script src="js/main_2.js"></script>  
+</body>
+</html>
